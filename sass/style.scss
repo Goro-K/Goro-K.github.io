@@ -136,9 +136,6 @@ input {
 }
 
 
-.fa-heart {
-    margin-left: 100px;
-}
 
 .img_restaurant {
     width: 100%;
@@ -146,6 +143,19 @@ input {
     object-fit: cover;
     border-radius: 20px 20px 0 0;
 }
+
+.carte__details {
+    display: flex;
+    .fa-heart {
+        margin-top: 5px;
+        margin-left: 5%;
+    }
+}
+
+.carte__details--flex {
+    width: 80%;
+}
+
 
 
 /* Footer */
