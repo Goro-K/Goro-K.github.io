@@ -1,0 +1,19 @@
+{
+  "name": "projet-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./sass/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goro-K/Kiziltoprak_Roman_3_16052022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Goro-K/Kiziltoprak_Roman_3_16052022/issues"
+  },
+  "homepage": "https://github.com/Goro-K/Kiziltoprak_Roman_3_16052022#readme"
+}
