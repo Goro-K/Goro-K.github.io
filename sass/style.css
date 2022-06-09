@@ -12,7 +12,7 @@ body {
 }
 
 /* Haut de page */
-header {
+.title-accueil {
   margin-top: 20px;
   text-align: center;
   font-family: Shrikhand, sans-serif;
@@ -240,6 +240,28 @@ footer .fa-solid {
   }
 }
 /* Page Menu */
+.title-menu {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Shrikhand, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-arrow-left {
+  font-size: 20px;
+}
+.fa-arrow-left:hover {
+  color: #9356DC;
+  transform: scale(1.5);
+  transition: transform 0.6s;
+}
+
+.t-menu {
+  width: 90%;
+}
+
 .partie_flex {
   padding-bottom: 10px;
 }
@@ -253,7 +275,7 @@ footer .fa-solid {
 .menu {
   padding: 0 5% 20px;
   background: #f2f2f2;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   position: relative;
   z-index: 1;
   margin-top: -20px;
