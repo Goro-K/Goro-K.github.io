@@ -19,7 +19,7 @@ body {
 
 
 .title-accueil {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-family: Shrikhand, sans-serif;
 }
@@ -76,7 +76,12 @@ input {
         }
     }
 }
-
+.btn-pink {
+    &:hover {
+        transform: scale(1.02);
+        transition: transform 0.6s;
+    }
+}
 
 /* Functioning */
 
@@ -185,7 +190,7 @@ input {
 footer {
     background: #25282a;
     color: white;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     padding-left: 5%;
 
     h2 {
@@ -279,7 +284,7 @@ footer {
 
 
 .title-menu {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-family: Shrikhand, sans-serif;
     display: flex;
@@ -530,3 +535,10 @@ footer {
         animation: rotate 4s ease-in-out forwards 0.5s;
     }
 }
+
+
+/* animation coeur */
+
+
+
+
