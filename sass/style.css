@@ -65,15 +65,11 @@ input {
   border-radius: 20px;
   background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
   box-shadow: -1px 6px 25px -5px rgba(0, 0, 0, 0.31);
+  transition: 0.3s;
 }
 .btn-pink a:hover {
   box-shadow: -1px 6px 25px -5px rgba(0, 0, 0, 0.6);
-  background: linear-gradient(to bottom, #FF79DA 30%, #9356DC 100%);
-}
-
-.btn-pink:hover {
-  transform: scale(1.02);
-  transition: transform 0.6s;
+  opacity: 0.7;
 }
 
 /* Functioning */
@@ -128,15 +124,15 @@ input {
   width: 90%;
   padding-bottom: 10px;
   box-shadow: -1px 6px 25px -5px rgba(0, 0, 0, 0.31);
+  transition: 1s;
+  opacity: 0.7;
 }
 .card:hover {
-  transform: scale(1.05);
-  transition: transform 0.6s;
+  opacity: 1;
 }
 .card h3, .card p {
   margin: 0;
   margin-left: 20px;
-  margin-top: 5px;
 }
 .card a {
   text-decoration: none;
@@ -157,13 +153,14 @@ input {
   display: flex;
   align-items: baseline;
 }
-.card__details .fa-heart {
-  margin-top: 5px;
-  margin-left: 5%;
-}
-
 .card__details--flex {
-  width: 80%;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-top: 5px;
+}
+.card__details--presentation {
+  width: 100%;
 }
 
 /* Footer */
@@ -270,9 +267,6 @@ footer .fa-solid {
 .partie_flex {
   padding-bottom: 10px;
 }
-.partie_flex section {
-  width: 90%;
-}
 .partie_flex section ul {
   padding: 0;
 }
@@ -306,23 +300,31 @@ footer .fa-solid {
 }
 
 .fa-circle-check {
-  font-size: 0;
+  color: #fff;
+  transition: transform 0.6s ease-in-out;
 }
 
+.checklist {
+  background: #99E2D0;
+  width: 0;
+  transition: all 0.6s ease-in-out;
+  padding: 26px 0;
+  border-radius: 0 20px 20px 0;
+}
+
+.btn {
+  overflow: hidden;
+}
 .btn:hover {
   box-shadow: -1px 6px 25px -5px rgba(0, 0, 0, 0.6);
 }
 .btn:hover .checklist {
-  background: #99E2D0;
-  padding: 23px 15px 22px 15px;
-  border-radius: 0 20px 20px 0;
-  transition: 0.4s;
+  width: auto;
+  padding: 27px 15px;
 }
 .btn:hover .fa-circle-check {
   color: #fff;
-  font-size: 26px;
   transform: rotate(360deg);
-  transition: transform 0.5s ease-in-out;
 }
 
 .btn {
@@ -378,27 +380,29 @@ footer .fa-solid {
   0% {
     opacity: 0;
   }
-  30% {
-    opacity: 0.3;
-  }
-  60% {
-    opacity: 0.6;
-  }
   100% {
     opacity: 1;
   }
 }
+@keyframes movement {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .menu {
-  animation: opacity 2s linear 0s;
+  animation: opacity 0.8s linear 0s;
 }
 .menu .entrees {
-  animation: opacity 1s linear 0s;
+  animation: opacity 1.3s linear 0s, movement 1s linear 0.2s;
 }
 .menu .dishes {
-  animation: opacity 1.5s linear 0s;
+  animation: opacity 2s linear 0s, movement 1.5s linear 0.2s;
 }
 .menu .desserts {
-  animation: opacity 2s linear 0s;
+  animation: opacity 2.5s linear 0s, movement 2s linear 0.2s;
 }
 
 /* Animation Chargement de page */
@@ -456,7 +460,7 @@ footer .fa-solid {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 1;
+  z-index: 2;
   background: linear-gradient(to bottom, #FF79DA 30%, #9356DC 100%);
   animation: disapear 0.5s ease-in-out forwards 4s;
 }
@@ -472,10 +476,71 @@ footer .fa-solid {
 }
 
 /* animation coeur */
-.fa-heart:hover {
-  transform: scale(1.2);
+@keyframes heart-move {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    animation: scale(1.1);
+  }
+}
+.heart {
+  position: absolute;
+  right: 54px;
+}
+
+.fa-heart {
   transition: transform 0.6s;
+}
+.fa-heart:hover {
+  animation: heart-move 0.4s ease-in-out forwards 0.5s;
+}
+
+.fa-heart-empty {
+  position: relative;
+  z-index: 1;
+}
+.fa-heart-empty:hover {
   color: #9356DC;
+  transform: scale(1.31);
+}
+.fa-heart-empty:hover + .fa-heart-solid {
+  color: #FF79DA;
+  transform: scale(1.13);
+  animation: heart-move 0.4s ease-in-out forwards 0.5s;
+}
+
+.fa-heart-solid {
+  position: absolute;
+  right: 0px;
+  transform: scale(0);
+  transition: transform 0.5s;
+}
+
+/* Coeur accueil */
+.card__details--heart1 {
+  position: relative;
+}
+
+.card__details--heart2 {
+  position: relative;
+}
+
+/* Etiquette nouveau */
+.card__label {
+  display: flex;
+}
+.card__label p {
+  position: absolute;
+  right: 100px;
+  bottom: 250px;
+  background-color: aquamarine;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=style.css.map */
