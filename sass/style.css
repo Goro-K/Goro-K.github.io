@@ -484,7 +484,7 @@ footer .fa-solid {
     transform: scale(0);
   }
   100% {
-    animation: scale(1.1);
+    transform: scale(1.1);
   }
 }
 .heart {
