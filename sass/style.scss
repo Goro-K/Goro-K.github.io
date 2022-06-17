@@ -126,6 +126,16 @@ input {
     h2 {
         margin-left: 5%;
     }
+    a {
+        text-decoration: none;
+        color: #25282a;
+        &:hover {
+            color: $purple;
+            .card__label {
+                color: #25282a;
+            }
+        }
+    }
 }
 
 
@@ -146,14 +156,6 @@ input {
         margin: 0;
         margin-left: 20px;
     }
-    a {
-        text-decoration: none;
-        color: #25282a;
-        &:hover {
-            color: $purple;
-        }
-    }
-
 }
 
 
@@ -347,7 +349,7 @@ footer {
     background: $green;
     width: 0;
     transition: all 0.6s ease-in-out;
-    padding: 26px 0;
+    padding: 27px 0;
     border-radius: 0 20px 20px 0;
 }
 
@@ -448,15 +450,15 @@ footer {
     animation: opacity 0.8s linear 0s;
 
     .entrees {
-        animation: opacity 1.3s linear 0s, movement 1s linear 0.2s ;
+        animation: opacity 1.3s linear 0s, movement 1s linear 0s ;
     }
 
     .dishes {
-        animation:  opacity 2s linear 0s, movement 1.5s linear 0.2s ;
+        animation:  opacity 2s linear 0s, movement 1s linear 0.2s ;
     }
 
     .desserts {
-        animation: opacity 2.5s linear 0s, movement 2s linear 0.2s ;
+        animation: opacity 2.5s linear 0s, movement 1s linear 0.4s ;
     }
 }
 
@@ -531,25 +533,40 @@ footer {
     flex-direction: column;
     z-index: 2;
     background: linear-gradient(to bottom, #FF79DA 30%, #9356DC 100%);
-    animation: disapear 0.5s ease-in-out  forwards 4s;
+    animation: disapear 0.5s ease-in-out  forwards 3s;
 
     .loading-title {
         font-family: Shrikhand, sans-serif;
-        animation: color 4s ease-in-out forwards 0.5s;
+        animation: color 3s ease-in-out forwards 0.5s;
     }
 
     .fa-circle-notch {
         font-size: 60px;
         position:relative;
         font-size: 100px;
-        animation: rotate 4s ease-in-out forwards 0.5s;
+        animation: rotate 3s ease-in-out forwards 0.5s;
     }
 }
 
 
 /* animation coeur */
 
-@keyframes heart-move {
+@keyframes heart-move-solid {
+    0% {
+        transform: scale(0);
+    }
+
+
+    50% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1.05);
+        color: $pink;
+    }
+}
+@keyframes heart-move-empty {
     0% {
         transform: scale(1.1);
     }
@@ -560,7 +577,7 @@ footer {
     }
 
     100% {
-        transform: scale(1.1)
+        transform: scale(1.05);
     }
 }
 
@@ -569,22 +586,22 @@ footer {
     right: 54px;
 }
 .fa-heart {
+    font-size: 21px;
     transition: transform 0.6s;
     &:hover {
-        animation: heart-move 0.4s ease-in-out forwards 0.5s;
+        animation: heart-move-empty 0.4s ease-in-out forwards 0.5s;
     }
 }
 
 .fa-heart-empty {
     position: relative;
     z-index: 1;
+    color: #25282a;
     &:hover {
-        color: $purple;
         transform: scale(1.31);
+        color: $purple;
         & + .fa-heart-solid {
-            color: $pink;
-            transform:scale(1.13);
-            animation: heart-move 0.4s ease-in-out forwards 0.5s;
+            animation: heart-move-solid 0.4s ease-in-out forwards 0.5s;
         }
 }
 }
@@ -593,7 +610,6 @@ footer {
     position: absolute;
     right:0px;
     transform: scale(0);
-    transition: transform 0.5s;
 }
 
 
@@ -611,13 +627,15 @@ footer {
 
 .card__label {
     display:flex;
+    position: relative;
     p {
         position: absolute;
-        right:100px;
-        bottom: 250px;
-        background-color: aquamarine;
+        right:20px;
+        bottom: 150px;
+        background-color: #99E2D0;
         border-radius: 5px;
         padding: 5px;
         font-weight: 600;
     }
 }
+
