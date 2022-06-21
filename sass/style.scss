@@ -261,6 +261,7 @@ footer {
 
     .partie_flex {
         display: flex;
+        justify-content: space-between;
         section {
             width: 30%;
             margin-right: 2%;

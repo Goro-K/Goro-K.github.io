@@ -229,6 +229,7 @@ footer .fa-solid {
 
   .partie_flex {
     display: flex;
+    justify-content: space-between;
   }
   .partie_flex section {
     width: 30%;
