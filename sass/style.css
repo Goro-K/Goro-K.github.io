@@ -91,9 +91,11 @@ input {
   margin-left: -10px;
 }
 .btn_functioning p:hover {
-  box-shadow: -1px 6px 25px -5px rgba(0, 0, 0, 0.6);
-  background: linear-gradient(to bottom, #F7C3FF 0%, #C456FF 100%);
-  color: #fff;
+  box-shadow: -1px 6px 25px -5px rgba(0, 0, 0, 0.31);
+  background: #fbdfff;
+}
+.btn_functioning p:hover .fa-functioning {
+  color: #9356DC;
 }
 .btn_functioning span {
   color: #fff;
@@ -135,10 +137,6 @@ input {
   padding-bottom: 10px;
   box-shadow: -1px 6px 25px -5px rgba(0, 0, 0, 0.31);
   transition: 1s;
-  opacity: 0.7;
-}
-.card:hover {
-  opacity: 1;
 }
 .card h3, .card p {
   margin: 0;
@@ -213,10 +211,6 @@ footer .fa-solid {
     text-align: center;
   }
 
-  .btn {
-    width: 31%;
-  }
-
   .restaurants__grid {
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -232,17 +226,12 @@ footer .fa-solid {
     justify-content: space-between;
   }
   .partie_flex section {
-    width: 30%;
-    margin-right: 2%;
+    width: 32%;
   }
 
   .menu {
     padding-bottom: 10px;
     padding: 0 2%;
-  }
-
-  .btn__in--left {
-    width: 60%;
   }
 }
 /* Page Menu */
@@ -339,26 +328,24 @@ footer .fa-solid {
   box-shadow: -1px 6px 25px -5px rgba(0, 0, 0, 0.31);
   justify-content: space-between;
   margin-bottom: 20px;
-  flex-wrap: wrap;
-  width: 100%;
 }
 .btn h3 {
   margin: 0;
   margin-top: 10px;
   white-space: nowrap;
-  width: 80%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .btn p {
   margin: 10px 0;
   white-space: nowrap;
-  width: 80%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .btn span {
   margin-right: 10px;
+  width: 32px;
+  margin-left: 10px;
 }
 
 .btn__in--right {
@@ -368,8 +355,9 @@ footer .fa-solid {
 }
 
 .btn__in--left {
-  width: 55%;
   padding-left: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .meal {
@@ -557,6 +545,7 @@ footer .fa-solid {
   border-radius: 5px;
   padding: 5px;
   font-weight: 600;
+  color: #0a906f;
 }
 
 /*# sourceMappingURL=style.css.map */

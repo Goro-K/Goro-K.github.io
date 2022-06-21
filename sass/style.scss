@@ -87,7 +87,6 @@ input {
 .btn_functioning {
     display: flex;
     align-items: center;
-    
     p {
         width: 100%;
         font-weight: bolder; 
@@ -98,9 +97,11 @@ input {
         margin-left: -10px;
         
         &:hover {
-            box-shadow: -1px 6px 25px -5px rgba(0,0,0,0.60);
-            background: linear-gradient(to bottom, #F7C3FF 0%, #C456FF 100%);
-            color: #fff;
+            box-shadow: -1px 6px 25px -5px rgba(0,0,0,0.31);
+            background: #fbdfff;
+            .fa-functioning {
+                color: $purple;
+            }
         }
     }
 
@@ -148,10 +149,6 @@ input {
     padding-bottom: 10px;
     box-shadow: -1px 6px 25px -5px rgba(0,0,0,0.31);
     transition: 1s;
-    opacity: 0.70;
-        &:hover {
-            opacity: 1;
-        }
     h3, p {
         margin: 0;
         margin-left: 20px;
@@ -240,11 +237,6 @@ footer {
             text-align: center;
         }
     }
-    
-    .btn {
-        width: 31%;
-    }
-
 
     .restaurants__grid {
         display: grid;
@@ -263,8 +255,7 @@ footer {
         display: flex;
         justify-content: space-between;
         section {
-            width: 30%;
-            margin-right: 2%;
+            width: 32%;
         }
     }
 
@@ -273,9 +264,6 @@ footer {
         padding: 0 2%;
     }
     
-    .btn__in--left {
-        width:60%;
-    }
 }
 
 
@@ -380,28 +368,27 @@ footer {
     box-shadow: -1px 6px 25px -5px rgba(0,0,0,0.31);
     justify-content: space-between;
     margin-bottom: 20px;
-    flex-wrap: wrap;
-    width: 100%;
+    
 
     h3 {
         margin: 0;
         margin-top: 10px;
-        white-space: nowrap; 
-        width: 80%; 
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
     }
 
     p {
         margin: 10px 0;
-        white-space: nowrap; 
-        width: 80%; 
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
     }
 
     span {
         margin-right: 10px;
+        width:32px;
+        margin-left:10px;
     }
 }
 
@@ -413,8 +400,9 @@ footer {
 }
 
 .btn__in--left {
-    width:55%;
     padding-left: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 .meal {
@@ -637,6 +625,7 @@ footer {
         border-radius: 5px;
         padding: 5px;
         font-weight: 600;
+        color: #0a906f;
     }
 }
 
