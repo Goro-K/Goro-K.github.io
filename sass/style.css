@@ -146,7 +146,8 @@ input {
 .restaurants__img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
 
@@ -210,17 +211,14 @@ footer .fa-solid {
     padding: 20px 0;
     text-align: center;
   }
-
   .restaurants__grid {
     display: grid;
     grid-template-columns: repeat(2, 50%);
   }
-
   footer ul {
     display: flex;
     justify-content: space-evenly;
   }
-
   .partie_flex {
     display: flex;
     justify-content: space-between;
@@ -228,7 +226,6 @@ footer .fa-solid {
   .partie_flex section {
     width: 32%;
   }
-
   .menu {
     padding-bottom: 10px;
     padding: 0 2%;
@@ -288,7 +285,8 @@ footer .fa-solid {
 .img_menu {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
 
@@ -368,12 +366,28 @@ footer .fa-solid {
 }
 
 /* animation section menu */
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes opacity {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes movement {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 @keyframes movement {
@@ -385,19 +399,41 @@ footer .fa-solid {
   }
 }
 .menu {
-  animation: opacity 0.8s linear 0s;
+  -webkit-animation: opacity 0.8s linear 0s;
+          animation: opacity 0.8s linear 0s;
 }
 .menu .entrees {
-  animation: opacity 1.3s linear 0s, movement 1s linear 0s;
+  -webkit-animation: opacity 1.3s linear 0s, movement 1s linear 0s;
+          animation: opacity 1.3s linear 0s, movement 1s linear 0s;
 }
 .menu .dishes {
-  animation: opacity 2s linear 0s, movement 1s linear 0.2s;
+  -webkit-animation: opacity 2s linear 0s, movement 1s linear 0.2s;
+          animation: opacity 2s linear 0s, movement 1s linear 0.2s;
 }
 .menu .desserts {
-  animation: opacity 2.5s linear 0s, movement 1s linear 0.4s;
+  -webkit-animation: opacity 2.5s linear 0s, movement 1s linear 0.4s;
+          animation: opacity 2.5s linear 0s, movement 1s linear 0.4s;
 }
 
 /* Animation Chargement de page */
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(360deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(720deg) scale(1);
+  }
+  75% {
+    transform: rotate(360deg) scale(1.2);
+    color: #fff;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg) scale(1);
@@ -414,6 +450,24 @@ footer .fa-solid {
   }
   100% {
     transform: rotate(0deg) scale(1);
+  }
+}
+@-webkit-keyframes color {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+    color: #fff;
+  }
+  100% {
+    transform: scale(1);
   }
 }
 @keyframes color {
@@ -434,12 +488,30 @@ footer .fa-solid {
     transform: scale(1);
   }
 }
-@keyframes disapear {
+@-webkit-keyframes disapear {
   0% {
+    opacity: 1;
     transform: scale(1);
+  }
+  20% {
+    opacity: 0;
   }
   100% {
     transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes disapear {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
   }
 }
 .loading-spinner {
@@ -454,20 +526,35 @@ footer .fa-solid {
   flex-direction: column;
   z-index: 2;
   background: linear-gradient(to bottom, #FF79DA 30%, #9356DC 100%);
-  animation: disapear 0.5s ease-in-out forwards 3s;
+  -webkit-animation: disapear 0.5s ease-in-out forwards 3s;
+          animation: disapear 0.5s ease-in-out forwards 3s;
 }
 .loading-spinner .loading-title {
   font-family: Shrikhand, sans-serif;
-  animation: color 3s ease-in-out forwards 0.5s;
+  -webkit-animation: color 3s ease-in-out forwards 0.5s;
+          animation: color 3s ease-in-out forwards 0.5s;
 }
 .loading-spinner .fa-circle-notch {
   font-size: 60px;
   position: relative;
   font-size: 100px;
-  animation: rotate 3s ease-in-out forwards 0.5s;
+  -webkit-animation: rotate 3s ease-in-out forwards 0.5s;
+          animation: rotate 3s ease-in-out forwards 0.5s;
 }
 
 /* animation coeur */
+@-webkit-keyframes heart-move-solid {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.05);
+    color: #FF79DA;
+  }
+}
 @keyframes heart-move-solid {
   0% {
     transform: scale(0);
@@ -478,6 +565,17 @@ footer .fa-solid {
   100% {
     transform: scale(1.05);
     color: #FF79DA;
+  }
+}
+@-webkit-keyframes heart-move-empty {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.05);
   }
 }
 @keyframes heart-move-empty {
@@ -501,7 +599,8 @@ footer .fa-solid {
   transition: transform 0.6s;
 }
 .fa-heart:hover {
-  animation: heart-move-empty 0.4s ease-in-out forwards 0.5s;
+  -webkit-animation: heart-move-empty 0.4s ease-in-out forwards 0.5s;
+          animation: heart-move-empty 0.4s ease-in-out forwards 0.5s;
 }
 
 .fa-heart-empty {
@@ -514,7 +613,8 @@ footer .fa-solid {
   color: #9356DC;
 }
 .fa-heart-empty:hover + .fa-heart-solid {
-  animation: heart-move-solid 0.4s ease-in-out forwards 0.5s;
+  -webkit-animation: heart-move-solid 0.4s ease-in-out forwards 0.5s;
+          animation: heart-move-solid 0.4s ease-in-out forwards 0.5s;
 }
 
 .fa-heart-solid {
@@ -546,6 +646,4 @@ footer .fa-solid {
   padding: 5px;
   font-weight: 600;
   color: #0a906f;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
