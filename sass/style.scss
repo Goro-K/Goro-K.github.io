@@ -528,7 +528,7 @@ footer {
     flex-direction: column;
     z-index: 2;
     background: linear-gradient(to bottom, #FF79DA 30%, #9356DC 100%);
-    animation: disapear 0.5s ease-in-out forwards 3s;
+    animation: disapear 1s ease-in-out forwards 3s;
 
     .loading-title {
         font-family: Shrikhand, sans-serif;
